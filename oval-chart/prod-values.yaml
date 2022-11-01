@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: perpetuumprogress/oval-metadatacache
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Set environment variables
   env:
     - name: "LOG_LEVEL"
@@ -38,15 +38,13 @@ image:
     - name: "CONFIG_FILE"
       value: "config.ini"
     - name: "ALLOWED_PUBLISHERS"
-      value: "[0x279e112d0D182A7234Fe11D0363B3C6f2edd71e4]"
+      value: '["0x279e112d0D182A7234Fe11D0363B3C6f2edd71e4"]'
     - name: "BFACTORY_BLOCK"
       value: "7298806"
     - name: "METADATA_CONTRACT_BLOCK"
       value: "7298808"
     - name: "NETWORK_NAME"
       value: "goerli"
-    - name: "EVENTS_RPC"
-      value: "https://goerli.infura.io/v3/6a3e18dfad90440aa5ad64e8f71d9da9"
     - name: "OCEAN_ADDRESS"
       value: "0xCfDdA22C9837aE76E0faA845354f33C62E03653a"
     - name: "BLOCKS_CHUNK_SIZE"
@@ -54,7 +52,7 @@ image:
     - name: "EVENTS_HTTP"
       value: "1" 
     # Overrides the image tag whose default is the chart appVersion.
-  tag: "dev"
+  tag: "prod"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -67,7 +65,11 @@ serviceAccount:
   annotations: {}
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
+<<<<<<< HEAD
   name: "dev-oval-metadatacache-run-service-account"
+=======
+  name: "prod-oval-metadatacache-run-service-account"
+>>>>>>> main
 
 podAnnotations: {}
 
@@ -94,14 +96,24 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
+<<<<<<< HEAD
     - host: metadatacache.dev.oval.pepro.io
+=======
+    - host: metadatacache.oval.pepro.io
+>>>>>>> main
       paths:
         - path: /
           pathType: Prefix
   tls: 
+<<<<<<< HEAD
     - secretName: dev-oval-metadatacache-tls
       hosts:
          - metadatacache.dev.oval.pepro.io
+=======
+    - secretName: prod-oval-metadatacache-tls
+      hosts:
+         - metadatacache.oval.pepro.io
+>>>>>>> main
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
