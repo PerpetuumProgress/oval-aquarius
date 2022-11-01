@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: perpetuumprogress/oval-metadatacache
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Set environment variables
   env:
     - name: "LOG_LEVEL"
@@ -45,8 +45,6 @@ image:
       value: "7298808"
     - name: "NETWORK_NAME"
       value: "goerli"
-    - name: "EVENTS_RPC"
-      value: "https://goerli.infura.io/v3/6a3e18dfad90440aa5ad64e8f71d9da9"
     - name: "OCEAN_ADDRESS"
       value: "0xCfDdA22C9837aE76E0faA845354f33C62E03653a"
     - name: "BLOCKS_CHUNK_SIZE"
