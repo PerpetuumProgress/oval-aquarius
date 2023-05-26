@@ -16,7 +16,7 @@ image:
     - name: "AQUARIUS_WORKERS"
       value: "1"
     - name: "DB_HOSTNAME"
-      value: "elasticsearch-master"
+      value: "http://elasticsearch-master"
     - name: "DB_MODULE"
       value: "elasticsearch"
     - name: "DB_NAME"
