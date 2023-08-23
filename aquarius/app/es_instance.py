@@ -23,7 +23,7 @@ logging.getLogger("elastic_transport.transport").setLevel(logging.ERROR)
 class ElasticsearchInstance(object):
     def __init__(self):
         args = {}
-        scheme = int(os.getenv("DB_SCHEME", "http"))
+        scheme = os.getenv("DB_SCHEME", "http")
         host = os.getenv("DB_HOSTNAME", "https://localhost")
         port = int(os.getenv("DB_PORT", 9200))
         username = os.getenv("DB_USERNAME", "elastic")
