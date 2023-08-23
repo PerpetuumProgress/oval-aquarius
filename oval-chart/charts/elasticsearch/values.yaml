@@ -22,7 +22,7 @@ roles:
   - transform
 
 replicas: 3
-minimumMasterNodes: 2
+minimumMasterNodes: 1
 
 esMajorVersion: ""
 
@@ -35,7 +35,7 @@ esConfig: {}
 #  log4j2.properties: |
 #    key = value
 
-createCert: true
+createCert: false
 
 esJvmOptions: {}
 #  processors.options: |
@@ -187,7 +187,7 @@ podManagementPolicy: "Parallel"
 # If you experience slow pod startups you probably want to set this to `false`.
 enableServiceLinks: true
 
-protocol: https
+protocol: http
 httpPort: 9200
 transportPort: 9300
 
@@ -307,7 +307,7 @@ networkPolicy:
   ## elasticsearch-master-transport-client: "true"
 
   http:
-    enabled: false
+    enabled: true
     ## if explicitNamespacesSelector is not set or set to {}, only client Pods being in the networkPolicy's namespace
     ## and matching all criteria can reach the DB.
     ## But sometimes, we want the Pods to be accessible to clients from other namespaces, in this case, we can use this
