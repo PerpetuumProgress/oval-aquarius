@@ -43,5 +43,5 @@ jobs:
       - name: Deploy
         uses: WyriHaximus/github-action-helm3@v2
         with:
-          exec: helm upgrade int-metadatacache-oval ./oval-chart --install --wait --atomic --namespace=int-oval --set=app.name=metadatacache_oval --set=rpc_url=${{secrets.RPC_URL}} --values=./oval-chart/int-values.yaml
+          exec: helm upgrade int-metadatacache-oval ./oval-chart --install --wait --atomic --namespace=int-oval --set=app.name=metadatacache_oval --set=rpc_url=${{secrets.INT_RPC_URL}} --values=./oval-chart/int-values.yaml
           kubeconfig: '${{ secrets.INT_KUBECONFIG }}'

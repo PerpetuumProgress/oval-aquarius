@@ -38,15 +38,11 @@ image:
     - name: "CONFIG_FILE"
       value: "config.ini"
     - name: "ALLOWED_PUBLISHERS"
-      value: '["0x279e112d0D182A7234Fe11D0363B3C6f2edd71e4"]'
-    - name: "BFACTORY_BLOCK"
-      value: "7298806"
-    - name: "METADATA_CONTRACT_BLOCK"
-      value: "7298808"
+      value: '[]'
     - name: "NETWORK_NAME"
-      value: "goerli"
+      value: "sepolia"
     - name: "OCEAN_ADDRESS"
-      value: "0xCfDdA22C9837aE76E0faA845354f33C62E03653a"
+      value: "0x1B083D8584dd3e6Ff37d04a6e7e82b5F622f3985"
     - name: "BLOCKS_CHUNK_SIZE"
       value: "5000"
     - name: "EVENTS_HTTP"
