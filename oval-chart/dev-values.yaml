@@ -24,7 +24,7 @@ image:
     - name: "DB_PORT"
       value: 9200
     - name: "DB_SCHEME"
-      value: "https"
+      value: "http"
     - name: "DB_USERNAME"
       value: "elastic "
     - name: "DB_PASSWORD"
