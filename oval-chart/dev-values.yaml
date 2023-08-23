@@ -6,6 +6,8 @@ elasticsearch:
    protocol: http
    antiAffinity: "soft"
    replicas: 1
+   http:
+      enabled: true
 
 image:
   repository: perpetuumprogress/oval-metadatacache
