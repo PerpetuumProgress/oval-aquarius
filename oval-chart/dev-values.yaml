@@ -4,6 +4,10 @@
 
 replicaCount: 1
 
+elasticsearch:
+   protocol: http
+   antiAffinity: "soft"
+
 image:
   repository: perpetuumprogress/oval-metadatacache
   pullPolicy: Always
