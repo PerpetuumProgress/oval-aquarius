@@ -23,6 +23,7 @@ logging.getLogger("elastic_transport.transport").setLevel(logging.ERROR)
 class ElasticsearchInstance(object):
     def __init__(self):
         args = {}
+        scheme = int(os.getenv("DB_SCHEME", "http"))
         host = os.getenv("DB_HOSTNAME", "https://localhost")
         port = int(os.getenv("DB_PORT", 9200))
         username = os.getenv("DB_USERNAME", "elastic")
@@ -42,7 +43,7 @@ class ElasticsearchInstance(object):
         self._index = index
         self._did_states_index = f"{self._index}_did_states"
         try:
-            self._es = Elasticsearch(host + ":" + str(port), **args)
+            self._es = Elasticsearch(scheme + "://" + host + ":" + str(port), **args)
             while self._es.ping() is False:
                 logging.info("Trying to connect...")
                 time.sleep(5)
