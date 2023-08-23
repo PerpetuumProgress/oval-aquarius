@@ -6,9 +6,9 @@ elasticsearch:
    protocol: http
    antiAffinity: "soft"
    replicas: 1
-   http:
-      enabled: true
-
+   esConfig:
+     elasticsearch.yml: |
+       xpack.security.enabled: true
 image:
   repository: perpetuumprogress/oval-metadatacache
   pullPolicy: Always
