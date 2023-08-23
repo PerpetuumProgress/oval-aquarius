@@ -107,5 +107,4 @@ docker/docs
 config_local.ini
 
 # local installations
-elasticsearch*
 .vscode
