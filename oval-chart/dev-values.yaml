@@ -56,6 +56,8 @@ image:
       value: "5000"
     - name: "EVENTS_HTTP"
       value: "1" 
+    - name: "PRIVATE_KEY"
+      value: "" 
     # Overrides the image tag whose default is the chart appVersion.
   tag: "dev"
 
